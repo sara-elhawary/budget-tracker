@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "savings",
+  "info": {
+    "singularName": "saving",
+    "pluralName": "savings",
+    "displayName": "Saving"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "biginteger"
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "EGP",
+        "SAR",
+        "USD",
+        "UAD"
+      ]
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "savings"
+    }
+  }
+}

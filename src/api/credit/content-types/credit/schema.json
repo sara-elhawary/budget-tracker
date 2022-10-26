@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "credits",
+  "info": {
+    "singularName": "credit",
+    "pluralName": "credits",
+    "displayName": "Credit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "by": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "credits"
+    },
+    "curreny": {
+      "type": "enumeration",
+      "enum": [
+        "EGP",
+        "USD",
+        "SAR",
+        "UAD"
+      ]
+    },
+    "amount": {
+      "type": "biginteger"
+    }
+  }
+}

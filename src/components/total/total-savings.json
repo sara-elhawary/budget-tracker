@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_total_savings_total_savings",
+  "info": {
+    "displayName": "total",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "amount": {
+      "type": "biginteger"
+    },
+    "currency": {
+      "type": "string"
+    }
+  }
+}

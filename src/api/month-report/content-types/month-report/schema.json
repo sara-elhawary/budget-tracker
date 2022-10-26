@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "month_reports",
+  "info": {
+    "singularName": "month-report",
+    "pluralName": "month-reports",
+    "displayName": "month-report",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "month": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "month_reports"
+    },
+    "published": {
+      "type": "boolean"
+    },
+    "participants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "expenses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::expense.expense"
+    },
+    "savings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::credit.credit"
+    },
+    "credits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::credit.credit"
+    },
+    "total_savings": {
+      "type": "component",
+      "repeatable": true,
+      "component": "total.total-savings"
+    },
+    "total_credits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "total.total-savings"
+    },
+    "total_expenses": {
+      "type": "component",
+      "repeatable": true,
+      "component": "total.total-savings"
+    }
+  }
+}

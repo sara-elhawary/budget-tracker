@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "expenses",
+  "info": {
+    "singularName": "expense",
+    "pluralName": "expenses",
+    "displayName": "Expense",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "by": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "expenses"
+    },
+    "amount": {
+      "type": "biginteger"
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "USD ",
+        "EGP",
+        "UAD",
+        "SAR"
+      ]
+    }
+  }
+}
